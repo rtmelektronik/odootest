@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_python_package.installed_public,python.package.installed Public User,odoo_running_python_status.model_python_package_installed,,1,0,0,0
+access_python_package.installed_base.group_system,python.package.installed Admin,odoo_running_python_status.model_python_package_installed,base.group_system,1,1,1,1
