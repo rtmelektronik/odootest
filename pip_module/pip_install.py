@@ -12,4 +12,4 @@ class PipInstall(models.TransientModel):
         cammand=self.name
         cammand=cammand.split(' ')
         result=subprocess.run([sys.executable, "-m", cammand[0], cammand[1], cammand[2]], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        raise UserError(result.stdout, result.stderr)
+        raise UserError(result.stdout + result.stderr)
