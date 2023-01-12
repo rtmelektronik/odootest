@@ -12,7 +12,10 @@ class SaleOrder(models.Model):
         compute="_compute_overdue_invoice_count_amount",
         string="# of Overdue Invoices",
         compute_sudo=True,
+        store=True,
+        index=True
     )
+    
     overdue_invoice_amount = fields.Monetary(
         compute="_compute_overdue_invoice_count_amount",
         string="Overdue Invoices Residual",
