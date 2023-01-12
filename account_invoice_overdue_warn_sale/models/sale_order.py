@@ -16,13 +16,12 @@ class SaleOrder(models.Model):
         index=True
     )
     
-    overdue_invoice_amount = fields.Monetary(
+    overdue_invoice_count = fields.Integer(
         compute="_compute_overdue_invoice_count_amount",
-        string="Overdue Invoices Residual",
+        string="# of Overdue Invoices",
         compute_sudo=True,
-        currency_field="company_currency_id",
-        help="Overdue invoices total residual amount of the invoicing partner "
-        "in company currency.",
+        store=True,
+        index=True
     )
     company_currency_id = fields.Many2one(
         related="company_id.currency_id", store=True, string="Company Currency"
