@@ -12,6 +12,8 @@ class ResPartner(models.Model):
         compute="_compute_overdue_invoice_count_amount",
         string="# of Overdue Invoices",
         compute_sudo=True,
+        stored=True,
+        indexed=True,
     )
     # the currency_id field on res.partner =
     # partner.company_id.currency_id or self.env.company.currency_id
@@ -20,6 +22,8 @@ class ResPartner(models.Model):
         string="Overdue Invoices Residual",
         compute_sudo=True,
         help="Overdue invoice total residual amount in company currency.",
+        stored=True,
+        indexed=True,
     )
 
     def _compute_overdue_invoice_count_amount(self):
